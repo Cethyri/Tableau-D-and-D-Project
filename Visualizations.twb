@@ -16,25 +16,25 @@
     <preference name='ui.shelf.height' value='26' />
   </preferences>
   <datasources>
-    <datasource caption='over_one_mil_chars_shrunk' inline='true' name='federated.1w0q67m1cg21ee169dkag0rrh3ib' version='18.1'>
+    <datasource caption='characters' inline='true' name='federated.17iijjm0t9basm15hmwew1calf5n' version='18.1'>
       <connection class='federated'>
         <named-connections>
-          <named-connection caption='over_one_mil_chars_shrunk' name='textscan.1xn56so1fcnxzw15j5t100944b10'>
-            <connection class='textscan' directory='C:/Users/Thya/Documents/AIMasters/BIT515/Assignments/Tableau D&amp;D Project' filename='over_one_mil_chars_shrunk.csv' password='' server='' />
+          <named-connection caption='characters_cleaned' name='textscan.0m4xyo403sgjqv12tb3y91orjef7'>
+            <connection class='textscan' directory='C:/Users/Thya/Documents/AIMasters/BIT515/Assignments/Tableau D&amp;D Project/datasets' filename='characters_cleaned.csv' password='' server='' />
           </named-connection>
         </named-connections>
-        <relation connection='textscan.1xn56so1fcnxzw15j5t100944b10' name='over_one_mil_chars_shrunk.csv' table='[over_one_mil_chars_shrunk#csv]' type='table'>
+        <relation connection='textscan.0m4xyo403sgjqv12tb3y91orjef7' name='characters_cleaned.csv' table='[characters_cleaned#csv]' type='table'>
           <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
             <column datatype='integer' name='F1' ordinal='0' />
-            <column datatype='integer' name='char_id' ordinal='1' />
+            <column datatype='integer' name='id' ordinal='1' />
             <column datatype='string' name='name' ordinal='2' />
             <column datatype='integer' name='base_hp' ordinal='3' />
-            <column datatype='integer' name='stats_1' ordinal='4' />
-            <column datatype='integer' name='stats_2' ordinal='5' />
-            <column datatype='integer' name='stats_3' ordinal='6' />
-            <column datatype='integer' name='stats_4' ordinal='7' />
-            <column datatype='integer' name='stats_5' ordinal='8' />
-            <column datatype='integer' name='stats_6' ordinal='9' />
+            <column datatype='integer' name='strength' ordinal='4' />
+            <column datatype='integer' name='dexterity' ordinal='5' />
+            <column datatype='integer' name='constitution' ordinal='6' />
+            <column datatype='integer' name='intelligence' ordinal='7' />
+            <column datatype='integer' name='wisdom' ordinal='8' />
+            <column datatype='integer' name='charisma' ordinal='9' />
             <column datatype='string' name='background' ordinal='10' />
             <column datatype='string' name='race' ordinal='11' />
             <column datatype='string' name='class_starting' ordinal='12' />
@@ -48,13 +48,15 @@
             <column datatype='datetime' name='date_modified' ordinal='20' />
             <column datatype='integer' name='notes_len' ordinal='21' />
             <column datatype='real' name='gold' ordinal='22' />
+            <column datatype='string' name='standardized_race' ordinal='23' />
+            <column datatype='string' name='race_category' ordinal='24' />
           </columns>
         </relation>
         <metadata-records>
           <metadata-record class='capability'>
             <remote-name />
             <remote-type>0</remote-type>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
             <remote-alias />
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -71,31 +73,31 @@
             <remote-name>F1</remote-name>
             <remote-type>20</remote-type>
             <local-name>[F1]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
             <remote-alias>F1</remote-alias>
             <ordinal>0</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>char_id</remote-name>
+            <remote-name>id</remote-name>
             <remote-type>20</remote-type>
-            <local-name>[char_id]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
-            <remote-alias>char_id</remote-alias>
+            <local-name>[id]</local-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
+            <remote-alias>id</remote-alias>
             <ordinal>1</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>name</remote-name>
             <remote-type>129</remote-type>
             <local-name>[name]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
             <remote-alias>name</remote-alias>
             <ordinal>2</ordinal>
             <local-type>string</local-type>
@@ -104,97 +106,97 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>base_hp</remote-name>
             <remote-type>20</remote-type>
             <local-name>[base_hp]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
             <remote-alias>base_hp</remote-alias>
             <ordinal>3</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>stats_1</remote-name>
+            <remote-name>strength</remote-name>
             <remote-type>20</remote-type>
-            <local-name>[stats_1]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
-            <remote-alias>stats_1</remote-alias>
+            <local-name>[strength]</local-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
+            <remote-alias>strength</remote-alias>
             <ordinal>4</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>stats_2</remote-name>
+            <remote-name>dexterity</remote-name>
             <remote-type>20</remote-type>
-            <local-name>[stats_2]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
-            <remote-alias>stats_2</remote-alias>
+            <local-name>[dexterity]</local-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
+            <remote-alias>dexterity</remote-alias>
             <ordinal>5</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>stats_3</remote-name>
+            <remote-name>constitution</remote-name>
             <remote-type>20</remote-type>
-            <local-name>[stats_3]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
-            <remote-alias>stats_3</remote-alias>
+            <local-name>[constitution]</local-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
+            <remote-alias>constitution</remote-alias>
             <ordinal>6</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>stats_4</remote-name>
+            <remote-name>intelligence</remote-name>
             <remote-type>20</remote-type>
-            <local-name>[stats_4]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
-            <remote-alias>stats_4</remote-alias>
+            <local-name>[intelligence]</local-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
+            <remote-alias>intelligence</remote-alias>
             <ordinal>7</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>stats_5</remote-name>
+            <remote-name>wisdom</remote-name>
             <remote-type>20</remote-type>
-            <local-name>[stats_5]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
-            <remote-alias>stats_5</remote-alias>
+            <local-name>[wisdom]</local-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
+            <remote-alias>wisdom</remote-alias>
             <ordinal>8</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>stats_6</remote-name>
+            <remote-name>charisma</remote-name>
             <remote-type>20</remote-type>
-            <local-name>[stats_6]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
-            <remote-alias>stats_6</remote-alias>
+            <local-name>[charisma]</local-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
+            <remote-alias>charisma</remote-alias>
             <ordinal>9</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>background</remote-name>
             <remote-type>129</remote-type>
             <local-name>[background]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
             <remote-alias>background</remote-alias>
             <ordinal>10</ordinal>
             <local-type>string</local-type>
@@ -203,13 +205,13 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>race</remote-name>
             <remote-type>129</remote-type>
             <local-name>[race]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
             <remote-alias>race</remote-alias>
             <ordinal>11</ordinal>
             <local-type>string</local-type>
@@ -218,13 +220,13 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>class_starting</remote-name>
             <remote-type>129</remote-type>
             <local-name>[class_starting]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
             <remote-alias>class_starting</remote-alias>
             <ordinal>12</ordinal>
             <local-type>string</local-type>
@@ -233,25 +235,25 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>class_starting_level</remote-name>
             <remote-type>20</remote-type>
             <local-name>[class_starting_level]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
             <remote-alias>class_starting_level</remote-alias>
             <ordinal>13</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>subclass_starting</remote-name>
             <remote-type>129</remote-type>
             <local-name>[subclass_starting]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
             <remote-alias>subclass_starting</remote-alias>
             <ordinal>14</ordinal>
             <local-type>string</local-type>
@@ -260,13 +262,13 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>class_other</remote-name>
             <remote-type>129</remote-type>
             <local-name>[class_other]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
             <remote-alias>class_other</remote-alias>
             <ordinal>15</ordinal>
             <local-type>string</local-type>
@@ -275,13 +277,13 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>subclass_other</remote-name>
             <remote-type>129</remote-type>
             <local-name>[subclass_other]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
             <remote-alias>subclass_other</remote-alias>
             <ordinal>16</ordinal>
             <local-type>string</local-type>
@@ -290,25 +292,25 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>total_level</remote-name>
             <remote-type>20</remote-type>
             <local-name>[total_level]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
             <remote-alias>total_level</remote-alias>
             <ordinal>17</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>feats</remote-name>
             <remote-type>129</remote-type>
             <local-name>[feats]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
             <remote-alias>feats</remote-alias>
             <ordinal>18</ordinal>
             <local-type>string</local-type>
@@ -317,13 +319,13 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>inventory</remote-name>
             <remote-type>129</remote-type>
             <local-name>[inventory]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
             <remote-alias>inventory</remote-alias>
             <ordinal>19</ordinal>
             <local-type>string</local-type>
@@ -332,90 +334,122 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>date_modified</remote-name>
             <remote-type>135</remote-type>
             <local-name>[date_modified]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
             <remote-alias>date_modified</remote-alias>
             <ordinal>20</ordinal>
             <local-type>datetime</local-type>
             <aggregation>Year</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>notes_len</remote-name>
             <remote-type>20</remote-type>
             <local-name>[notes_len]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
             <remote-alias>notes_len</remote-alias>
             <ordinal>21</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>gold</remote-name>
             <remote-type>5</remote-type>
             <local-name>[gold]</local-name>
-            <parent-name>[over_one_mil_chars_shrunk.csv]</parent-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
             <remote-alias>gold</remote-alias>
             <ordinal>22</ordinal>
             <local-type>real</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]</object-id>
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>standardized_race</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[standardized_race]</local-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
+            <remote-alias>standardized_race</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>race_category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[race_category]</local-name>
+            <parent-name>[characters_cleaned.csv]</parent-name>
+            <remote-alias>race_category</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]</object-id>
           </metadata-record>
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
-      <column caption='over_one_mil_chars_shrunk.csv' datatype='table' name='[__tableau_internal_object_id__].[over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E]' role='measure' type='quantitative' />
+      <column caption='characters_cleaned.csv' datatype='table' name='[__tableau_internal_object_id__].[characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01]' role='measure' type='quantitative' />
       <column caption='Background' datatype='string' name='[background]' role='dimension' type='nominal' />
       <column caption='Base Hp' datatype='integer' name='[base_hp]' role='measure' type='quantitative' />
-      <column caption='Char Id' datatype='integer' name='[char_id]' role='dimension' type='ordinal' />
+      <column caption='Charisma' datatype='integer' name='[charisma]' role='measure' type='quantitative' />
       <column caption='Class Other' datatype='string' name='[class_other]' role='dimension' type='nominal' />
       <column caption='Class Starting' datatype='string' name='[class_starting]' role='dimension' type='nominal' />
       <column caption='Class Starting Level' datatype='integer' name='[class_starting_level]' role='measure' type='quantitative' />
+      <column caption='Constitution' datatype='integer' name='[constitution]' role='measure' type='quantitative' />
       <column caption='Date Modified' datatype='datetime' name='[date_modified]' role='dimension' type='ordinal' />
+      <column caption='Dexterity' datatype='integer' name='[dexterity]' role='measure' type='quantitative' />
       <column caption='Feats' datatype='string' name='[feats]' role='dimension' type='nominal' />
       <column caption='Gold' datatype='real' name='[gold]' role='measure' type='quantitative' />
+      <column caption='Id' datatype='integer' name='[id]' role='dimension' type='ordinal' />
+      <column caption='Intelligence' datatype='integer' name='[intelligence]' role='measure' type='quantitative' />
       <column caption='Inventory' datatype='string' name='[inventory]' role='dimension' type='nominal' />
       <column caption='Name' datatype='string' name='[name]' role='dimension' type='nominal' />
       <column caption='Notes Len' datatype='integer' name='[notes_len]' role='measure' type='quantitative' />
       <column caption='Race' datatype='string' name='[race]' role='dimension' type='nominal' />
-      <column caption='Stats 1' datatype='integer' name='[stats_1]' role='measure' type='quantitative' />
-      <column caption='Stats 2' datatype='integer' name='[stats_2]' role='measure' type='quantitative' />
-      <column caption='Stats 3' datatype='integer' name='[stats_3]' role='measure' type='quantitative' />
-      <column caption='Stats 4' datatype='integer' name='[stats_4]' role='measure' type='quantitative' />
-      <column caption='Stats 5' datatype='integer' name='[stats_5]' role='measure' type='quantitative' />
-      <column caption='Stats 6' datatype='integer' name='[stats_6]' role='measure' type='quantitative' />
+      <column caption='Race Category' datatype='string' name='[race_category]' role='dimension' type='nominal' />
+      <column caption='Standardized Race' datatype='string' name='[standardized_race]' role='dimension' type='nominal' />
+      <column caption='Strength' datatype='integer' name='[strength]' role='measure' type='quantitative' />
       <column caption='Subclass Other' datatype='string' name='[subclass_other]' role='dimension' type='nominal' />
       <column caption='Subclass Starting' datatype='string' name='[subclass_starting]' role='dimension' type='nominal' />
       <column caption='Total Level' datatype='integer' name='[total_level]' role='measure' type='quantitative' />
+      <column caption='Wisdom' datatype='integer' name='[wisdom]' role='measure' type='quantitative' />
       <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
       </semantic-values>
       <object-graph>
         <objects>
-          <object caption='over_one_mil_chars_shrunk.csv' id='over_one_mil_chars_shrunk.csv_AD82C60509D949B4BC9486812BF8700E'>
+          <object caption='characters_cleaned.csv' id='characters_cleaned.csv_2CD01163293B4B90A5FFE1624E2A4C01'>
             <properties context=''>
-              <relation connection='textscan.1xn56so1fcnxzw15j5t100944b10' name='over_one_mil_chars_shrunk.csv' table='[over_one_mil_chars_shrunk#csv]' type='table'>
+              <relation connection='textscan.0m4xyo403sgjqv12tb3y91orjef7' name='characters_cleaned.csv' table='[characters_cleaned#csv]' type='table'>
                 <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
                   <column datatype='integer' name='F1' ordinal='0' />
-                  <column datatype='integer' name='char_id' ordinal='1' />
+                  <column datatype='integer' name='id' ordinal='1' />
                   <column datatype='string' name='name' ordinal='2' />
                   <column datatype='integer' name='base_hp' ordinal='3' />
-                  <column datatype='integer' name='stats_1' ordinal='4' />
-                  <column datatype='integer' name='stats_2' ordinal='5' />
-                  <column datatype='integer' name='stats_3' ordinal='6' />
-                  <column datatype='integer' name='stats_4' ordinal='7' />
-                  <column datatype='integer' name='stats_5' ordinal='8' />
-                  <column datatype='integer' name='stats_6' ordinal='9' />
+                  <column datatype='integer' name='strength' ordinal='4' />
+                  <column datatype='integer' name='dexterity' ordinal='5' />
+                  <column datatype='integer' name='constitution' ordinal='6' />
+                  <column datatype='integer' name='intelligence' ordinal='7' />
+                  <column datatype='integer' name='wisdom' ordinal='8' />
+                  <column datatype='integer' name='charisma' ordinal='9' />
                   <column datatype='string' name='background' ordinal='10' />
                   <column datatype='string' name='race' ordinal='11' />
                   <column datatype='string' name='class_starting' ordinal='12' />
@@ -429,6 +463,8 @@
                   <column datatype='datetime' name='date_modified' ordinal='20' />
                   <column datatype='integer' name='notes_len' ordinal='21' />
                   <column datatype='real' name='gold' ordinal='22' />
+                  <column datatype='string' name='standardized_race' ordinal='23' />
+                  <column datatype='string' name='race_category' ordinal='24' />
                 </columns>
               </relation>
             </properties>
@@ -438,22 +474,1143 @@
     </datasource>
   </datasources>
   <worksheets>
-    <worksheet name='Sheet 1'>
+    <worksheet name='Viz'>
       <table>
         <view>
           <datasources>
-            <datasource caption='over_one_mil_chars_shrunk' name='federated.1w0q67m1cg21ee169dkag0rrh3ib' />
+            <datasource caption='characters' name='federated.17iijjm0t9basm15hmwew1calf5n' />
           </datasources>
-          <datasource-dependencies datasource='federated.1w0q67m1cg21ee169dkag0rrh3ib'>
+          <datasource-dependencies datasource='federated.17iijjm0t9basm15hmwew1calf5n'>
             <column-instance column='[race]' derivation='Count' name='[cnt:race:qk]' pivot='key' type='quantitative' />
             <column-instance column='[race]' derivation='None' name='[none:race:nk]' pivot='key' type='nominal' />
+            <column-instance column='[race_category]' derivation='None' name='[none:race_category:nk]' pivot='key' type='nominal' />
             <column caption='Race' datatype='string' name='[race]' role='dimension' type='nominal' />
+            <column caption='Race Category' datatype='string' name='[race_category]' role='dimension' type='nominal' />
           </datasource-dependencies>
-          <filter class='quantitative' column='[federated.1w0q67m1cg21ee169dkag0rrh3ib].[cnt:race:qk]' included-values='in-range'>
-            <min>2000</min>
+          <filter class='categorical' column='[federated.17iijjm0t9basm15hmwew1calf5n].[none:race:nk]'>
+            <groupfilter count='10' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='COUNT([race])' function='order' user:ui-marker='order'>
+                <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;?????&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;\&quot;Blessed by Light\&quot;&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;\&quot;Human\&quot;&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;(Retired) Deus&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;(WoW) Dark Iron Dwarf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;(WoW) Draenei&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;(WoW) Night Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;[OneD&amp;D] Human&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;[Tariel] Eagra&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Aasimar (Dragon Child)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Aasimar (Volo&apos;s Guide to Monsters)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Aasimar Protetor&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Abeil&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Abomination&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Abyssal Cambion&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Abyssal Tiefling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ackrylil&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Actually a Tiefling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Adamantine Dragonborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Additional Feat Half-Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ae&apos;ren&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Aeolan&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Aetheril&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ailead&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ailthizar (Aasimar)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Air Genasi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ajatar&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Alakar&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Alchemical Scarecrow&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Alien&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Alien Grey&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Alu-fiend&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Amazon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Amazonian&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Amonkhet Minotaur&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;An&apos;Ku&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ancient Ones&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Android&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Angel of Death&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Angelborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Angelic Phoenix&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Angels&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Angler Titan&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Animated Armor&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Anka&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Annülian&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Anodod&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Anthro equine&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Anthropomorph&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Anubite&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ape&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Aperture Device&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Apostate Mind Flayer&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Aquari&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Arachni&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Arachnoid&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Aranthi (GnG)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Arboren&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Arcanum: Human&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Arcforged&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Archon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Arcosians&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Arenea&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Aroura (Ratfolk)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ashborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ashborn (AotG)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ashera&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Asmodean Devil&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Atla’Harkun&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Atlantic Peoples&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Attalwen&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Atuin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Auld&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Auricar&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Automata&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Automaton&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Autumn Hamadryad&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Avali&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Avariel&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Avatar&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Awakened Animal&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Awakened Ape&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Awakened Beast&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Awakened Cat&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Awakened Dog&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Awakened Flesh Golem&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Awakened fox&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Awakened Half-Dragon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Awakened Rabbit&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Awakened Tree&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Awakened Undead&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Awakened White Tiger&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Awoken Rabbit&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Axiom&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Aynerth Minotaur&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Azlanti Pureblood&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Badgerfolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Bag of Holding&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Baketako&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Bane Juggernaut(Goliath)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Bat&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Bathynomian&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Bear&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Bearfolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Bearkin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Beast&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Beastfolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Beastkin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Beevallan&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Bennett&apos;s Half-Orc&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;bernuR&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Black Orc&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Black Rider&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Blackblood&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Blackscale (Lizardfolk Variant)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Bladeling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Blood Angel&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Blood Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Bloodborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Bloodkissed&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Bloom Children&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Blusian&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Bonestruct&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Børn af fortiden&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Børn af guderne&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Born of the Storm&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Breton&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Briarling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Brown Bear&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Brownie&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Buffkin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Bullywug&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Bureese&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Caenara&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Calamaris&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Cambion&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Cambion (Redeemed)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Canid&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Canidae&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Canide&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Caretaker&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Castorian&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Cat&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Cat folk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Cat Folk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Catfolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Cathominem&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Catkin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ceburus shifter&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Cecaelia&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Celestial Tiefling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Centaur-UA&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Cerberus Shifter&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Cervitaur&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Chaladon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Changeling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Changeling (UA)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Channelling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Charr&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Chetova&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Child of the Fey&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Chimera&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Chinaman&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Chinu&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Chitine&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Chronomancer&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Cl4-PPY&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Clockwork&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Clockwork Construct&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Clockwork Golem&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Clockwork Youkai&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Clockworks&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Cnidarian&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Construct&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Copper Golem&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;COPY_OF_Aarakocra&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;COPY_OF_Aasimar&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;COPY_OF_Eldritch Fiend - Succubus Variant&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;COPY_OF_Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;COPY_OF_Goliath&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;COPY_OF_Half-Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;COPY_OF_Half-Orc&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;COPY_OF_Human&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;COPY_OF_Minotaur&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;COPY_OF_Tabaxi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;COPY_OF_Triton&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Corbeau&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Corgotten&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Couatl&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Crabtaur&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Craislusian&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Crimson Demon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Crocadilian&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Crow&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Cursed Feline&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Cursed Variant (Swamp)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Custom Lineage&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Cutis&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Cyberborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Cyborg&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Daegoling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Daevi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dalharil&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Damphir&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Darfellan&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dark (Drow)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dark Elf (Drow)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Darklains&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Darkstalker&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Davi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Daywalker (Vampire Variant)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;DeathClaw&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Deft Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Degmon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Deku Scrub&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Delunian Mageforged&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dem&apos;Fe&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Demigod&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Demon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Demonborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Derro&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Desert Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Desterran&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Deva&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Deva (Zeitgeist)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Devil&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dexterous Dragonborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dhamphir&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dhampir - Midgard&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dhampir (Archived)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dhampire&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dhampyr&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Diaspora Human&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dire Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dire-Tabaxi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dispater Tiefling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Displacer Beast&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;DL&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;DL - Minotaur&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dlobok&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dobor Goliath&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dog&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Doppelganger&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Doppelganger Race&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Doppleganger&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dothraki&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Draak&apos;ar&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Draco-Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Draconi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Draconian&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Draconic angel&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Draconic Angel&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Draconic Races (Archived)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Draconid&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Draenei&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dragon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dragon Half-Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dragon Knight&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dragonborn (Breath Weapon Modified)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dragonborn (Revised)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dragonborn (Sphaeran Variant)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dragonborn (Variant)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dragonborn Goliath&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dragonborn Halfling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dragonborn II&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dragonborn Legacy&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dragonborn of Ysterra&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dragonborn Revenant&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dragondwarf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;DragonElf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dragonfolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dragonkin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dragonwrought Kobold&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dragoon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Drakonian [HB]&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Draxnor Orc&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dreya&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Drider (drow-ish)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dromite&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Drow&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Drow (Dark Elf)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Drow (Dark-Elf)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Drow Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dryad&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Duhorov; Hill&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Duhorov; Mountain&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dullahan&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;dur-val&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dwarf (Aanheim variant)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dwarf Genasi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dwarfling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dwarven Tiefling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dwelf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Dworc&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ealiir&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Earth Folk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Earth Genasi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Eberron Goblin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Eberron Znir Pact Gnoll&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Eggonion&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Einherjar Shade&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ekurai&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Elapidae&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Elc&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Elderspawn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Eldrazi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Elementalian&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Elf (Aanheim Variant)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Elf (World Walkers Universe)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Elf Orc&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Elf-Dragon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Elf-Dragonborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Elf-Orc&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Elf/Unicorn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Elfling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Emier&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Eneru, God of the Storms&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Enlightened Human&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Enlightened One - Halfling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ensouled Object&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ent&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Erinyes&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Eteetif Vaekran&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ethryne&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ettin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Evan&apos;s Goblin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ex-Geist&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Exile&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ezera Nemuoth&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Faden_Bugbear&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fae&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fae Hybrid&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Faeborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Faerie&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Faerie Dragon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Faery&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fairies&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fairy&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fairy (Archived)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fairy, Winged&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fallen angel&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Far-Realm-Touched Half-Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;fashner&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Faun&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Faunus&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Favoured of Setesh&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Faye&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Felic&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Felin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Feral Dragonborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Feral Tiefling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fey Corgi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fey Dog&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fey Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fey Folk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fey Vampire&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fey&apos;ri&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Feykin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Feytouched&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Feytouched Tiefling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fiendling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fierna Tiefling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Firbolg for Paige&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Firboliath&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fire Genasi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Firekindle Ragebeast&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Flarusian&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fleeban&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Flintfoot Feral Tiefling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Flora Colossus&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Flumph&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Forest Gnome&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Forest Mousefolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Forest Spirit&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Forged&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Forsaken&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fox&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fox Folk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fox Folk Kitsune&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fox Race&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Fox-folk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Free Gnoll&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Frog Folk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Frost Troll&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Frox&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Funglet&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Furry Lion&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;G&apos;HaKaan&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;G&apos;orc&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Galapian&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Gallian&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Gastrosapien&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Gato&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Gearforged&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Gemstone Dragonborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Genasi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Genie&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Gerudo&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ghost&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ghostblood&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ghoul Folk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Giant Blooded Oresyn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Giomorgo (Half-Vistani)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Gith&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Glowers&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Gnoll&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Gnoll (Southland Heroes)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Gnolls of Raef (Gnor)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Gnome-Tiefling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Gnorri&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;goblin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Goblin - Lorenzo&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Goblin (Aedin Setting)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Goblin (Ixalan)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Goblin (Khron)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Goblinoid Ogre&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Gobs&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;god&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Golem&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Goliant&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Goliath (free feet variant)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Goliath (NG)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Goliath (Tyrileth)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Goliath based Chimera&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Goliath Panda&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Golyatih&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Goopy mass&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Gorgon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Gorilla&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Gothrik&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Green Slaad&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Gria&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Griffin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Grim Angel (real version)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Grimfrost Warforged&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Grippli&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Gronn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Guidari&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half - Dryad&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half Banshee&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half breed&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half Drow/Half Aasimar&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half Dwarf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half Elf (variant)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half Elf Dragonborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half Fey&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half Giant&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half Gnome, Half Orc&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half goblin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half Orc - Half Tiefling v2&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half Orc Half Drow&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half Tiefling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Aasimar, Half-Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Alicorn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Angel&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Demon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Dragon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Dragonborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Drow&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Dryad&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Dwarf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Elf  (Copy)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Elf (Revised)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Elf (Speed Variant)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Elf Variant&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Elf-Orc&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-elf/half Passerean&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-elf/tiefling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Fey&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-giant&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Giant&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Goblin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Goliath&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Goliath Eladrin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Kitsune&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Medusa&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Mer&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Mer/Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Minotaur&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Ogre&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Oni&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Oni/Half-Succubi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Orc Aasimar&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Orc Goliath&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Orc Samurai&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Orc Variant (Feat)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Orc/Genasi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Orcish&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Siren&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Tabaxi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Troll&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Unicorn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-Valkryie&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Half-vampire&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Halfdarkelf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Halfling (World Walkers Universe)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Hamadryad&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Hap-Fey&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Harbingers&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Harefolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Harpy&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Haunted Skull&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Heaven Born&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Hengeyokai&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Hephet&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Hexblood (Archived)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;High Dagorcian&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;High Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;High Elven Water Genasi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;High Fae&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Hill Dwarf (Reincarnated Half-Elf)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Hiran Cervitaur&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Hirm&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Hobgoblin of the Feywild (Archived)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Hobgoblin-Aasimar&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Hollow One&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Holy Goliath&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Homunculus&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Honorspren&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Horne&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;HSR*&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;HSS - Brendan&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Human&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Human - Hoya&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Human - Plains&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Human (CR)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Human (Legacy)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Human (World Walker Universe)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Human Ancestry&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Human Aviator&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Human Revenant&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Human Vampire&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Human-Aasimar&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;human, Werewolf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Human*&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Human/Dragonborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Humans of Esilon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Huncubi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Hungret&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;HUWYTE&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Hyur&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Hyverman&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ice Troll&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Iceblood Tiefling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ifrit&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Iksar&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Illithid&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Illithid (Mind Flayer)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;ILLITHID (renegade)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Illyrian&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Imini&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Immortal&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Imp&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Imperial&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Inaba&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Incubus/Succubus&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Incubus/Succubus (Tiefling Variant)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Infernal Half Elf (Fey’ri) - With Bladesinger Subclass Abilities&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Inkling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Iron Giants&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Irontouched&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ishim&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Iter Ligno&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Jaalibon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Jackalfolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Jackalwere&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Jemmora Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Jemmora Human&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Jotun&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Jotunn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kakuta&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;kalasharen&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kalashtar (UA)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kalaxriel&apos;s First Brood&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kaldorei&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kallista&apos;s Stats&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kari-Eten&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kekeke&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kelethis&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kelpie&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Keme&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kenks&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kenku Mimic&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kessiger&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kettir&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Khajahadan&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Khajiit&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Khajit&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Khulgani&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kina&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kiroth&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kitsune&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kitsune  (Homebrew)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kitsune (Slyvan Blessed Fox)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kobold (archived)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kobold (Improved)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kobold Urd&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kobold Werewolf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kongōrikishi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Krutika&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Kuo-Toa&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ladu&apos;Acrum&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Laecorai&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lamia&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lapine&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lapineirdae&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lathari&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Legion of Dusk Vampire&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lemurian&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Leotaur&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Leprechaun&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;LeShayan Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Levistus Tiefling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lich&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lichkin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lightborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lightfoot Half-Hin Race&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lightless&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lightning Giants&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lineages&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lionfolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;LionFolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Living Flesh Construct&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lizard-Folk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;lizardfolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;LizardFolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lizardfolk- Alligator-kin Tribe&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lizardfolk- Axolotl Tribe&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lizardfolk- Chameleon Tribe&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lizardfolk- Gila Monster Tribe&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lizardfolk- Komodo Tribe&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lizardfolk- Velociraptor Tribe&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lizardkin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lizaryd&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Llamataur&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lorrnath&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Loxodon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Loxodon-UA&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lucario&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lupin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lupine&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lupine Dragon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lutire&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lutire  MK II&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lycan&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lycanthrope&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Lynx&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Magi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Magic Cat&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Magical beast&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Magitech Droid&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Magma Genasi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Maldrath&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Malkin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Man&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mantid&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mantodea&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Matryoshka&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mauko&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mausu&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mechonic Titan&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Medusa&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Meerbat&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Megalosaurasapians&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Megapis Nearctica&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mer&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mercury Dragonborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Merfolk - River Herald&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Merfolk (Zendikar)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mexican&apos;t&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Michtim&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mida&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Midgard Bearfolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Midgard Gearforged&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Midgard Kobold&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mikoto&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mimic&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mind Flayer&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Minotaur&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Minotaur (Krynn)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Minotaur (UA)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Minotaur of Midgard&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Minotaur-UA&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Minotaut&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Miqo&apos;te&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Miqo&apos;te Custom&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Modron&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mogogol&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mongrel&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Monkii&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Monolith&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Moogle&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Moon Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Moon Fey&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Moonfolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mothfolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mothkin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mousefolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mousefolk Large&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mousekin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Moüst&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;MtG - Kor&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;MtG Elf Variant&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mul&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mummy&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Muridae&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Murloc&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Mushroam&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Myconid&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Nagaji&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Nalacen&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Native American (Blackfoot)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Natureling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Necrotempists&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Neko&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Neko race&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Nelliadine&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Nephalem&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Nephalem v2&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Nephilim&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Nephilim (Aasimar-Tiefling)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Neutral&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Newly Minted Tiefling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Nezumi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Night Goblin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Nipens&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Njörth&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Nokken&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Nopon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Nord&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Nosferatu&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Nroji&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Númenórean&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Nymph&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Nymphaeus&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Oblex&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ochong&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ogre&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ogre (GT)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Oina&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Olethrios&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Oni&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Orarukk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Orc (archived)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Orc (Revised)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Orc of Eberron&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Orc of Exandria&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Orc-Changeling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Orc!&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Orc&apos;Klar&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Orcasion&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Orcling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Oreinak&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Orinthai&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ork&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Otterfolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Otterman&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ovgiin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Owl Aarakocra&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Owl Folk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Owlbear&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Owlfolk (Archived)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Pactborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Panda&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Pandaren&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;papillon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Pelanan&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Persona (gem)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Phasm&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Piney&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Pink Dragonborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Pirate_Dragonborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Pixie&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Planegea Human - Devon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Planetar&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Platyperson&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Plesiosaurus&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Plover Primal&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Possessed Cat&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Potatoekin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Priaced&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Prima Terra, Ascended&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Prima Terra, Vozeri&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Prismatic Dragonborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Protector Aasimar&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Pseudodragon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Psychic Arthropod for Spelljammer w Doug&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Puppicorn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Purple Dragonborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Pygmy Fox-folk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Quaggoth&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Quarter-Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Quarter-Orc-half-plant&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Quetzalin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Qunari&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Quorrl&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Rabbit&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Rabbit Folk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;RabbitFolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Rabbitfolk (Archived)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Raccobold&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Raccobolds&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Race test&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Racoon Critter&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Raftan&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Rakasta&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Rakshasa&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ralad&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Rama&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Rarê Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ratfolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ratling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Rattkin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Rautani&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ravenite Dragonborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Reader Catasect&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Real Life Human&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Real Panda&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Reaper&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Reborn (Archived)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Reborn Angel&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Red Fox&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Redead&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Reincarnate&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Reincarnated Kildrake Satyr&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Relicforged&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Rendo&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Reptamun&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Revenant - Human Variant CoS Kampanjebase&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Revenant (Human)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Revenant Human&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Revisitor&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Roegadyn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Rose Mudborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Rougarou&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Safir&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Sahuagin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Saiyan&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Sakaaran&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Saltar&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Sasember&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Sasquatch&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Scarecrow&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Scarred Lands Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Sciurian&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Sea Monkey&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Sea Nixies&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Sealed Dragon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Seedling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Selachian&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Selkie&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Sentient Phase Spider&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Serpent-Folk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Serpentine Yuan-Ti&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Shad&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Shadar Kai&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Shadar-kai&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Shade&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Shadow Born&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Shapechanger&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Shapeshifter&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Shardmind&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Sharkfolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Shattered Orc&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;She-wolf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Sheikah&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;shifter&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Shifter (Beasthide)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Shifter (UA)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Shiftling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Shin&apos;en Kai&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Shindarri Lieutenant&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Shroomborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;sibaro&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Sidheling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Silanu triton&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Silm&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Silva&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Silver Dragon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Sindar Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Sisslureelian&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Skallgin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Skeleton&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;SkinWalker&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Skullcap&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Skurri&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Skymin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Slimefolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;SlimeLords&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Slusset&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Snake Folk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Snapwick Imp&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Sneeple&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Sol&apos;Vra&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Sorrow May&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Soulbound&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Soulforged&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Spellbound Alligator&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Spinagon (Spined Devil)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Spiritforged&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Spriggan&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Squireelfolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Stained Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Star Human&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Stone-Orc&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Stonefolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Stormfolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Strix (Grimfrost Campaign)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Subrosian&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;succubus&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Succubus&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Succubus/Incubus&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Sudalix&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Sun-Hunter Orc&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Supial&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Surrogate&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Surveyor Warforged Variant&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Svensali&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Sylvan Centaur&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Sylvari&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Symian&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Szarkai&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;tab&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;tabaxi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tabaxi (CR)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tabaxi-1&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tabaxi-Halfling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tabaxi/ Snow Leopard Varient&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tabaxii&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Taitvog&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tall&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Talpid&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tanarukk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tarutaru&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Teethling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Teifkocra&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tentamouth&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tesumaki&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tetra&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;The Choosen&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;The dragon born&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Thri-Kreen&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Thri-Kreen of Athas&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Thurmagaunt Tiefling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Thylean Medusa&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Thylean Nymph&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tiefling - Zariel Variant&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tiefling (Azazel)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tiefling (Balthazar)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tiefling (HR)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tiefling [Glasya Ancestry]&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tiefling Abyssal Varient&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tiefling Feral&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tiefling Half-Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tiefling Half-Orc&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tiefling of the Sun&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tiefling Variant&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tiefling Variant (Feat)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tiefling with Fierna blood&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tiefling-Aasimar Hybrid&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tiefling, Cambion&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tikikit&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Time Ghost&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Time Lord&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tobaxi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tokay&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tordine Oraci&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tortel&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tortle Mystic&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Transplanted Dwarf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Treant&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Treeant&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Treefolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Treent&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tressym&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Triton (swamp)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Triton Prime&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Troll&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Troll (Alternian)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Trollkind&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tropic Avali&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;True Minotaur&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;True Orc&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Truffling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Turtle&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tuskarr&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tuzetae&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Twi&apos;lek&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Typhon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Tzyn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;UA minotaur&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ugandan Knuckles&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ula Merfolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ulitharid&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Undead&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Undead Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Undead Hand Pedestal&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Undead Tortle&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Unearthed Arcana: Minotaur&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Unicorn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Urd&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ursidae (Bearfolk)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ursine&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Urskan&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Uskad&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Utu - The Orphaned&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Vaati&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Vales (Fallen Angels)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Valheru&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Vali&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Valpen&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;vampire&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Vanara&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Vanaras&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Variant Human To Yuan-ti Pureblood&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Variant Tiefling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Variant Warforged&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Varient(Feat) Mousefolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Vedalken-UA&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Veissux&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Venandi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Verbeeg&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Veresio&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Vermin Spawn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Vernon&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Vexeye&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Viashino-UA&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Viperfolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Virikan&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Void Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Void Folk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Voidborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Voldur&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Vryloka&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Vygul&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wakahnka&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Walrusfolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wanderfolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;War Forged&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Warcraft Goblin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;warforge&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Warforge&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Warforged&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Warforged (AX)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Warforged (eberron5e.com)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Warforged (Subraces)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Warforged (UA)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Warforged 2&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Warforged Adaptable&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Warforged Sentinel&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Warforged UA&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Warmage Dragonborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Water Genasi&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wearbear Goliath&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Weasel&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;WereBat&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Werechicken&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Werefox&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Weretouched&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Werewolf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;WhiteSpire - Dhampir&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Widow-sapiens&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wight&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wight (Alheim)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wild Dwarf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wild Kenku&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wilden&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Winged Tiefling&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Winter Wolf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;WM Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wolfbold&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wolfborn&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wolfen&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wolfox&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wolhelms&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wood Elf-Orc&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wood Woad&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Woodsy Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wookalar&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wookie&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wooloo&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Worgen&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wraith&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wricklet&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wulven&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Wyvern (Youngling)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Yantikite&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;yee naaldlooshii&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Yivrri&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Yntrels (Gnomes of Glosmordin)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Ysoki&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;yuan ti&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Yuan Ti Pureblood&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Yuan-ti&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Yuan-ti (Halfling) Pureblood (HB)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Yuan-Ti Malison&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Yuan-ti Pureblood&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Yuan-Ti Pureblood&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Yuan-ti Pureblood (revised)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;yuanti malison&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Yuki-otoko&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Zendekar Vampire&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Zendikar Elf&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Zendikar Goblin&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Zendikar Merfolk&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Zendikar Vampire&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Zenythri&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Zora&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Zuggtmoy&apos;s Spawn (Tiefling Subrace)&quot;' />
+                  <groupfilter function='member' level='[none:race:nk]' member='&quot;Людоящер&quot;' />
+                </groupfilter>
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.17iijjm0t9basm15hmwew1calf5n].[none:race_category:nk]' context='true'>
+            <groupfilter function='member' level='[none:race_category:nk]' member='&quot;Homebrew&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
           </filter>
           <slices>
-            <column>[federated.1w0q67m1cg21ee169dkag0rrh3ib].[cnt:race:qk]</column>
+            <column>[federated.17iijjm0t9basm15hmwew1calf5n].[none:race_category:nk]</column>
+            <column>[federated.17iijjm0t9basm15hmwew1calf5n].[none:race:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -466,14 +1623,14 @@
             <mark class='Automatic' />
           </pane>
         </panes>
-        <rows>[federated.1w0q67m1cg21ee169dkag0rrh3ib].[cnt:race:qk]</rows>
-        <cols>[federated.1w0q67m1cg21ee169dkag0rrh3ib].[none:race:nk]</cols>
+        <rows>[federated.17iijjm0t9basm15hmwew1calf5n].[cnt:race:qk]</rows>
+        <cols>[federated.17iijjm0t9basm15hmwew1calf5n].[none:race:nk]</cols>
       </table>
-      <simple-id uuid='{D948FEA4-EAC9-43E8-BD53-3C5D4714676A}' />
+      <simple-id uuid='{1CC61254-5D6F-48B0-8D3F-A89C9FD2925D}' />
     </worksheet>
   </worksheets>
   <windows saved-dpi-scale-factor='1.5' source-height='44'>
-    <window class='worksheet' maximized='true' name='Sheet 1'>
+    <window class='worksheet' maximized='true' name='Viz'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -495,125 +1652,94 @@
         </edge>
       </cards>
       <viewpoint>
-        <selection-collection>
-          <tuple-selection>
-            <tuple-reference>
-              <tuple-descriptor>
-                <pane-descriptor>
-                  <x-fields>
-                    <field>[federated.1w0q67m1cg21ee169dkag0rrh3ib].[none:race:nk]</field>
-                  </x-fields>
-                  <y-fields>
-                    <field>[federated.1w0q67m1cg21ee169dkag0rrh3ib].[cnt:race:qk]</field>
-                  </y-fields>
-                </pane-descriptor>
-                <columns>
-                  <field>[federated.1w0q67m1cg21ee169dkag0rrh3ib].[cnt:race:qk]</field>
-                  <field>[federated.1w0q67m1cg21ee169dkag0rrh3ib].[none:race:nk]</field>
-                </columns>
-              </tuple-descriptor>
-              <tuple>
-                <value>21114</value>
-                <value>&quot;Genasi&quot;</value>
-              </tuple>
-            </tuple-reference>
-          </tuple-selection>
-        </selection-collection>
         <highlight>
           <color-one-way>
-            <field>[federated.1w0q67m1cg21ee169dkag0rrh3ib].[none:race:nk]</field>
+            <field>[federated.17iijjm0t9basm15hmwew1calf5n].[none:race:nk]</field>
           </color-one-way>
         </highlight>
       </viewpoint>
-      <simple-id uuid='{9419D160-9585-47D4-BD0A-8272F1E69B71}' />
+      <simple-id uuid='{C2878268-F6D8-4983-BAE1-215C6C19EB4F}' />
     </window>
   </windows>
   <thumbnails>
-    <thumbnail height='192' name='Sheet 1' width='192'>
+    <thumbnail height='192' name='Viz' width='192'>
       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
-      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
+      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
     </thumbnail>
   </thumbnails>
 </workbook>
